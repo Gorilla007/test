@@ -27,6 +27,9 @@ $linkData = array(
 'message' => 'Смотрим!',
 );
 
+echo 'test';
+exit;
+
 try {  
   $response = $fb->post("/{$page_id}/feed", $linkData, $token); // post to page  
 } catch(Facebook\Exceptions\FacebookResponseException $e) {	
