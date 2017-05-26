@@ -23,14 +23,12 @@ $fb = new Facebook\Facebook(array(
 
 // описание параметров есть в документации
 $linkData = array(
-//'link' => 'https://www.facebook.com/groups/gorillatv/',
-//'message' => 'Смотрим!',
-'object_id' => '330075597411865'
+'link' => 'https://www.facebook.com/groups/gorillatv/',
+'message' => 'Смотрим!',
 );
 
 try {  
-  //$response = $fb->post("/{$page_id}/feed", $linkData, $token); // post to page
-  $response = $fb->get("/{$object_id}/sharedposts"); // post to page
+  $response = $fb->post("/{$page_id}/feed", $linkData, $token); // post to page  
 } catch(Facebook\Exceptions\FacebookResponseException $e) {	
   // When Graph returns an error
   echo 'Graph returned an error: ' . $e->getMessage();
