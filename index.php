@@ -1,6 +1,9 @@
 <?php
 require_once __DIR__ . '/fb/src/Facebook/autoload.php';
 
+echo 'test2';
+exit;
+
 // App ID и App Secret из настроек приложения
 $app_id = "1906904016262094";
 $app_secret = "0dd5fa6b651acac12159514dcafbd75e"; 
