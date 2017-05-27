@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/fb/src/Facebook/autoload.php';
 
-$hash = md5('dgfkK3453hksdhk345k' . $_GET['hash'])
+$hash = md5('dgfkK3453hksdhk345k' . $_GET['hash']);
 
 if ($hash != 'de07f372315b16d6ba95808c1796b0ed') 
 {
