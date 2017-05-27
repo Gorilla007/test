@@ -48,7 +48,7 @@ try {
   exit;
 }
 
-$dd = file_get_contents("http://gorillatv.16mb.com/?hash=dgfkK3453hksdhk345k&file=" . $filePath);
+$dd = file_get_contents("http://gorillatv.16mb.com/remove.php/?hash=dgfkK3453hksdhk345k&file=" . $filePath);
 
 $graphNode = $response->getGraphNode();
 var_dump($response);
