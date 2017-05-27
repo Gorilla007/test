@@ -1,14 +1,15 @@
 <?php
 require_once __DIR__ . '/fb/src/Facebook/autoload.php';
 
-$hash = md5('dgfkK3453hksdhk345k' . $_GET['hash'])
+$hash = $_GET['hash'];
+$hashMd5 = md5('dgfkK3453hksdhk345k' . $hash);
 
-if ($hash != 'de07f372315b16d6ba95808c1796b0ed') 
+if ($hashMd5 != 'de07f372315b16d6ba95808c1796b0ed') 
 {
 	exit;
-}
+} 
 
-$params = file_get_contents('http://gorillatv.16mb.com/key.php');
+$params = file_get_contents('http://gorillatv.16mb.com/key.php/?hash=' . $hash);
 $params = json_decode($params, true); 
 
 // App ID и App Secret из настроек приложения
