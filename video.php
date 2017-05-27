@@ -25,16 +25,19 @@ $fb = new Facebook\Facebook(array(
 'default_graph_version' => 'v2.9',
 ));
 
-// описание параметров есть в документации
-$linkData = array(
-'link' => 'https://www.facebook.com/groups/gorillatv/',
-'message' => 'Присоединяйтесь!',
-);
+$file = file_get_contents('http://gorillatv.16mb.com/file.php');
+$file = json_decode($file, true);
+$fileName = $file['name'];
+$filePath = $file['g_name'];
 
-
+$data = [  
+  'title' => $fileName,
+  'description' => $fileName,
+  'source' => $fb->videoToUpload($filePath),
+];
 
 try {  
-  $response = $fb->post("/{$page_id}/feed", $linkData, $token); // post to page  
+  $response = $fb->post("/{$group_id}/videos", $data, $token);  
 } catch(Facebook\Exceptions\FacebookResponseException $e) {	
   // When Graph returns an error
   echo 'Graph returned an error: ' . $e->getMessage();
@@ -45,7 +48,9 @@ try {
   exit;
 }
 
+$dd = file_get_contents("http://gorillatv.16mb.com/?hash=dgfkK3453hksdhk345k&file=" . $filePath);
+
 $graphNode = $response->getGraphNode();
 var_dump($response);
 
-echo 'ID: ' . $graphNode['id'];
+echo 'ID: ' . $graphNode['id'] . ' ' . $fileName;
