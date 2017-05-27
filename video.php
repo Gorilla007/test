@@ -49,7 +49,7 @@ try {
   exit;
 }
 
-$dd = file_get_contents("http://gorillatv.16mb.com/remove.php/?hash='. $hash .'&file=" . $filePath);
+$dd = file_get_contents('http://gorillatv.16mb.com/remove.php/?hash='. $hash .'&file=' . $filePath);
 
 $graphNode = $response->getGraphNode();
 var_dump($response);
