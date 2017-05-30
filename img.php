@@ -53,8 +53,6 @@ try {
   exit;
 }
 
-$dd = file_get_contents('http://gorillatv.16mb.com/remove.php/?hash='. $hash .'&file=' . $file['file_path']);
-
 $graphNode = $response->getGraphNode();
 var_dump($response);
 
