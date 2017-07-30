@@ -15,6 +15,8 @@ if ($hashMd5 != 'de07f372315b16d6ba95808c1796b0ed')
 $params = file_get_contents('http://gorillatv.16mb.com/key.php/?hash=' . $hash);
 $params = json_decode($params, true); 
 
+
+
 // App ID и App Secret из настроек приложения
 $app_id = $params['app_id'];
 $app_secret = $params['app_secret']; 

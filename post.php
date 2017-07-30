@@ -17,9 +17,10 @@ $app_id = $params['app_id'];
 $app_secret = $params['app_secret']; 
 // ID страницы и токен
 $page_id = $params['page_id']; //page id
+$page_id_new = $params['page_id_new']; //page id
 $group_id = $params['group_id'];   // group id
 $token = $params['token'];
- 
+
 $fb = new Facebook\Facebook(array(
 'app_id'  => $app_id,
 'app_secret' => $app_secret,

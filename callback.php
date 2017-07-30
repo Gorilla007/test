@@ -30,8 +30,10 @@ $fb = new Facebook\Facebook([
 ]); 
  
 $helper = $fb->getRedirectLoginHelper();
- 
-echo $helper->getAccessToken(); exit;
+
+$f = file_get_contents('http://gorillatv.16mb.com/savefb-token.php/?token=' . $helper->getAccessToken());
+header("Location: http://gorillatv.16mb.com/publish.php");
+exit;
  
 try {
 $accessToken = $helper->getAccessToken();
